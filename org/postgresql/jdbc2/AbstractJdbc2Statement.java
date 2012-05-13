@@ -1209,8 +1209,10 @@ public abstract class AbstractJdbc2Statement implements BaseStatement
         case Types.DISTINCT:
         case Types.STRUCT:
         case Types.NULL:
-        case Types.OTHER:
             oid = Oid.UNSPECIFIED;
+            break;
+        case Types.OTHER:
+            oid = Oid.TEXT;
             break;
         default:
             // Bad Types value.
